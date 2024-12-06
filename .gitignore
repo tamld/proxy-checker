@@ -1,0 +1,22 @@
+# Ignore Python virtual environment
+venv/
+__pycache__/
+
+# Ignore environment files
+.env
+
+# Ignore output data files
+data/output/
+
+# Ignore input data files
+data/input/
+
+# Ignore GeoLite2 databases (since they will be downloaded during runtime)
+data/geolite/
+
+# Ignore log files
+*.log
+
+# Ignore system files
+.DS_Store
+*.swp

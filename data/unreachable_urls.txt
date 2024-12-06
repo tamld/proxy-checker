@@ -1,0 +1,4 @@
+https://raw.githubusercontent.com/HyperBeats/proxy-list/main/socks4.txt
+https://raw.githubusercontent.com/saschazesiger/Free-Proxies/master/proxies/socks4.txt
+https://raw.githubusercontent.com/HyperBeats/proxy-list/main/socks5.txt
+https://raw.githubusercontent.com/saschazesiger/Free-Proxies/master/proxies/socks5.txt
