@@ -62,15 +62,20 @@ Here is the structure of the **proxy-checker** project with additional explanati
 
 ### Workflow Diagram (Mermaid)
 
+<div align="center">
+
 ```mermaid
-flowchart TD
-    A[fetch_proxies.sh] --> B[docker_proxy_check.sh]
-    B --> C[classify_proxies.py]
-    C --> D[send_to_telegram.py]
-    A -->|Output: proxies.txt| B
-    B -->|Output: live_proxies.txt| C
-    C -->|Data Processed| D
+sequenceDiagram
+    participant Fetch as fetch_proxies.sh
+    participant Check as docker_proxy_check.sh
+    participant Classify as classify_proxies.py
+    participant Notify as send_to_telegram.py
+
+    Fetch->>Check: Fetch proxies
+    Check->>Classify: Check live status
+    Classify->>Notify: Classify and send results
 ```
+</div>
 
 ### Project Setup 🛠️
 #### Prerequisites 📦
@@ -78,8 +83,8 @@ You need to have the following installed on your system before starting:
 
 - Python (>= 3.8) 🐍
 - Docker 🐳
-- GeoLite ASN Database 📚 (File: GeoLite2-ASN.mmdb)
 - git
+- curl
 
 ### Installation Steps ⚙️
 #### 1. Clone the Repository
@@ -116,8 +121,14 @@ pip install -r requirements.txt
 ```
 
 #### 4. Setting Up Environment Variables
-Get API [ipinfo.io] (https://ipinfo.io/signup)
-Get API [proxychecker.io] (https://proxycheck.io/)
+- To get the **Channel ID** and **Topic ID** for sending Telegram notifications:
+   - Search for **@MissRose_bot** in Telegram.
+   - Add it as an **administrator** to your channel or group.
+   - Type `/id` in the channel or group.
+   - @MissRose_bot will reply with the **Channel ID** and **Topic ID**.
+
+- Get API [ipinfo.io](https://ipinfo.io/signup)
+- Get API [proxychecker.io](https://proxycheck.io/)
 
 Create a .env file to store the configuration variables, such as:
 ```text
