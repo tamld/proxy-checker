@@ -1,4 +1,4 @@
-<h1 align="center">Proxy Checker User Guide</h1>
+<h1 align="center">Proxy Checker User Guide 📌</h1>
 
 ## Index 📋
 - [Index 📋](#index-)
@@ -24,26 +24,32 @@ The **proxy-checker** project is an automated tool designed to help you validate
 
 ## Project Directory Structure 📁
 
-Here is the structure of the **proxy-checker** project:
+Here is the structure of the **proxy-checker** project with additional explanations for each file and directory:
+
 ```bash
 /proxy-checker
-|-- .env
-|-- .gitignore
-|-- data
+|-- .env                          # Environment variables file for configuration settings
+|-- .gitignore                    # Files to be ignored by git (such as sensitive information or large data)
+|-- data                          # Folder for storing input and output data
 |   |-- geolite
-|   |   -- GeoLite2-ASN.mmdb
+|   |   -- GeoLite2-ASN.mmdb      # Database file used for ASN (Autonomous System Number) lookup
 |   |-- input
-|   |   -- proxies.txt
+|   |   -- proxies.txt            # Input file containing the list of proxies to be validated
 |   -- output
-|       -- live_proxies.txt
-|-- requirements.txt
--- scripts
-    |-- classify_proxies.py
-    |-- docker_proxy_check.sh
-    |-- fetch_proxies.sh
-    |-- main.py
-    |-- run_scripts.sh
-    |-- send_to_telegram.py
+|       -- live_proxies.txt       # Output file containing proxies that are found to be live after validation
+|-- requirements.txt              # Python dependencies required to run the scripts
+|-- pictures                      # Folder containing illustrative images
+|   -- fetch_proxies.png          # Diagram showing the workflow of fetching proxies
+|   -- check_proxies.png          # Diagram for the proxy-checking process
+|   -- classify_proxies.png       # Diagram for classifying proxies
+|   -- telegram_send.png          # Diagram for sending results to Telegram
+-- scripts                        # Folder containing all project scripts
+    |-- classify_proxies.py       # Python script to classify proxies into different categories based on various criteria
+    |-- docker_proxy_check.sh     # Bash script to check the status of proxies using Docker and mubeng
+    |-- fetch_proxies.sh          # Bash script to fetch proxies from a given URL
+    |-- main.py                   # Main script for central control (optional)
+    |-- run_scripts.sh            # Bash script to run all necessary scripts for the workflow in sequence
+    |-- send_to_telegram.py       # Python script to send information about the proxies to Telegram channels
 ```
 
 ## Summary and Workflow 🌐
@@ -93,10 +99,14 @@ python -m venv venv
 
 Activate the virtual environment:
 Linux/Mac:
-```source venv/bin/activate```
+```bash
+source venv/bin/activate
+```
 
 Windows:
-```venv\Scripts\activate```
+```cmd
+venv\Scripts\activate
+```
 
 #### 3. Install Dependencies
 Use pip to install the necessary dependencies from requirements.txt:
@@ -106,6 +116,9 @@ pip install -r requirements.txt
 ```
 
 #### 4. Setting Up Environment Variables
+Get API [ipinfo.io] (https://ipinfo.io/signup)
+Get API [proxychecker.io] (https://proxycheck.io/)
+
 Create a .env file to store the configuration variables, such as:
 ```text
 # API Keys for third-party services
@@ -140,7 +153,7 @@ TELEGRAM_CHECKED_TOPIC=""  # Topic ID for Checked Proxies
 #### 5. Usage:
 
 ```bash
-chmod +x ./run_scripts.sh
+chmod +x ./scripts/run_scripts.sh
 ./scripts/run_scripts.sh
 ```
 
