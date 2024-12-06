@@ -140,6 +140,7 @@ TELEGRAM_CHECKED_TOPIC=""  # Topic ID for Checked Proxies
 #### 5. Usage:
 
 ```bash
+chmod +x ./run_scripts.sh
 ./scripts/run_scripts.sh
 ```
 
