@@ -144,15 +144,10 @@ CHECKED_PROXIES_FILE="${BASE_PATH}/output/checked_proxies.txt"  # Path to store 
 RESIDENTIAL_PROXIES_FILE="${BASE_PATH}/output/residential_proxies.txt"  # Path to store the list of residential proxies
 
 # GeoLite2 Database Paths (Will be downloaded during execution)
-ASN_DB_PATH="${BASE_PATH}/geolite/GeoLite2-ASN.mmdb"  # Path to the ASN database
-CITY_DB_PATH="${BASE_PATH}/geolite/GeoLite2-City.mmdb"  # Path to the City database
-COUNTRY_DB_PATH="${BASE_PATH}/geolite/GeoLite2-Country.mmdb"  # Path to the Country database
-
-# URLs to download GeoLite2 databases
 BASE_URL="https://github.com/P3TERX/GeoLite.mmdb/raw/download"  # Base URL to download GeoLite2 databases
 ASN_DB_URL="${BASE_URL}/GeoLite2-ASN.mmdb"  # URL for downloading ASN database
-CITY_DB_URL="${BASE_URL}/GeoLite2-City.mmdb"  # URL for downloading City database
-COUNTRY_DB_URL="${BASE_URL}/GeoLite2-Country.mmdb"  # URL for downloading Country database
+ASN_DB_PATH="${BASE_PATH}/geolite/GeoLite2-ASN.mmdb"  # Path to the ASN database
+
 
 # Telegram Bot Token for notifications (Optional)
 TELEGRAM_BOT_TOKEN=""  # Telegram bot token for sending messages (leave empty if not used)
@@ -170,12 +165,16 @@ chmod +x ./scripts/run_scripts.sh
 
 This will execute the following:
 - Fetch proxies.
+
 ![Image: Checking Proxies Workflow](pictures/fetch_proxies.png)
 - Check their live status.
+
 ![Image: Checking Proxy Status](pictures/check_proxies.png)
 - Classify them.
+
 ![Image: Classify Proxy](pictures/classify_proxies.png)
 - Send the results via Telegram.
+
 ![Image: Send Telegram](pictures/telegram_send.png)
 ### Conclusion 🏁
 The proxy-checker project automates the validation, classification, and notification of proxy information. By following this guide, you can set up the environment, run each script individually, or automate the entire process.
