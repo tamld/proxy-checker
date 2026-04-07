@@ -1,5 +1,14 @@
 <h1 align="center">Proxy Checker User Guide 📌</h1>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/status-active-brightgreen" alt="Status">
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Telegram-notification-26A5E4?logo=telegram&logoColor=white" alt="Telegram">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs Welcome">
+</p>
+
+
 ## Index 📋
 - [Index 📋](#index-)
 - [Introduction 🚀](#introduction-)
